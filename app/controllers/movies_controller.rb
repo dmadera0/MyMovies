@@ -1,6 +1,10 @@
 class MoviesController < ApplicationController
     def index 
-        @movies = Movie.all 
+        if params[:search]
+            @movies = Movie.where('title LIKE ?', "%#{params[:search]}%")
+          else 
+            @movies = Movie.all
+        end
         render json: @movies
     end
 

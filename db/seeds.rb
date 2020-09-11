@@ -9,7 +9,7 @@ require 'pry'
 
 
 
-(1..5).to_a.each do |page|
+(1..50).to_a.each do |page|
     # binding.pry
     url = "https://api.themoviedb.org/3/movie/top_rated?api_key=eccae21236f50571310ed5eb92155abe&language=en-US&page=#{page.to_s}"
     response = RestClient.get(url)
